@@ -4,7 +4,7 @@ import ChatContainer from './components/ChatContainer'
 import ChatInput from './components/ChatInput'
 import './App.css'
 
-const API_BASE_URL = 'http://localhost:3000'
+const API_BASE_URL = 'https://ai-bot-fjez.onrender.com/'
 
 function App() {
   const [messages, setMessages] = useState([
@@ -111,7 +111,7 @@ function App() {
       console.error('Error calling backend:', error)
       
       if (error.message === 'Failed to fetch') {
-        return "Cannot connect to the backend server. Make sure it's running on http://localhost:3000"
+        return "Cannot connect to the backend server. Make sure it's running on https://ai-bot-fjez.onrender.com/"
       }
       
       return `Error: ${error.message || 'Unknown error occurred'}`
