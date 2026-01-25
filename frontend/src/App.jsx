@@ -4,7 +4,7 @@ import ChatContainer from './components/ChatContainer'
 import ChatInput from './components/ChatInput'
 import './App.css'
 
-const API_BASE_URL = 'https://ai-bot-fjez.onrender.com/'
+const API_BASE_URL = 'https://ai-bot-fjez.onrender.com'
 
 function App() {
   const [messages, setMessages] = useState([
