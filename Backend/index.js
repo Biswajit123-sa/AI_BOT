@@ -7,7 +7,6 @@ let app=express();
 app.use(cors());
 app.use(express.json());
 
-const KEY = process.env.KEY
 let model = null
 let useMock = false
 
@@ -21,12 +20,12 @@ const cleanMarkdown = (text) => {
     .trim()
 }
 
-if (!KEY) {
+if (!process.env.KEY) {
   console.warn('WARNING: No API key provided (process.env.KEY). Backend will run in mock mode.');
   useMock = true
 } else {
   try {
-    const genAi = new GoogleGenerativeAI(KEY)
+    const genAi = new GoogleGenerativeAI(process.env.KEY);
     model = genAi.getGenerativeModel({ model: 'gemini-2.5-flash' })
   } catch (err) {
     console.error('failed to initialize generative model SDK:', err.message)

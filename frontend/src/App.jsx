@@ -137,7 +137,7 @@ function App() {
     try {
       // Get AI response from backend
       const aiResponse = await sendMessageToBackend(text)
-
+      
       setMessages((prev) => {
         const aiMessageId = prev.length + 1
         return [...prev, {
